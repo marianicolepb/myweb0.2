@@ -1,0 +1,87 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe6f2;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.welcome {
+    text-align: center;
+    margin: 20px 0;
+}
+
+    .welcome h1 {
+        color: #ff66b2; 
+        font-size: 2em;
+    }
+
+    .welcome p {
+        color: #333;
+        font-size: 1.2em;
+        margin-top: 10px;
+    }
+
+    .welcome img {
+        border-radius: 8px;
+        margin-top: 15px;
+        max-width: 100%;
+        height: auto;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+.about-site, .inspiration {
+    background-color: white;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .about-site h2, .inspiration h2 {
+        color: #ff66b2;
+        font-size: 1.8em;
+        text-align: center;
+    }
+
+    .about-site p, .inspiration blockquote {
+        color: #333;
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-top: 15px;
+    }
+
+    .about-site blockquote, .inspiration blockquote {
+        font-style: italic;
+        color: #666;
+        text-align: center;
+        margin-top: 20px;
+        border-left: 3px solid #ff66b2;
+        padding-left: 15px;
+    }
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #666; 
+}
+
+a {
+    color: #ff66b2; 
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+    a:hover {
+        color: #ff3399; 
+    }

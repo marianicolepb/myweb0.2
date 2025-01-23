@@ -1,0 +1,43 @@
+﻿@page
+@model myweb0._2.Pages.myWeb.RedSocialModel
+
+@{
+    ViewData["Title"] = "Redes Sociales";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/RedesSociales.css" />
+</head>
+<body>
+
+<div class="container">
+    <h1>Redes Sociales</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Usuario</th>
+                <th>Enlace</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var redSocial in Model.RedesSociales)
+            {
+                <tr>
+                    <td>@redSocial.Nombre</td>
+                    <td>@redSocial.Usuario</td>
+                    <td><a href="@redSocial.Enlace" target="_blank">@redSocial.Enlace</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>

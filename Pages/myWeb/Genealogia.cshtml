@@ -1,0 +1,97 @@
+﻿@page
+@model GenealogiaModel
+@{
+    ViewData["Title"] = "Genealogia";
+    var abuelas = Model.Genealogias.Where(g => g.Relacion == "Abuela").ToList();
+    var padres = Model.Genealogias.Where(g => g.Relacion == "Padres").ToList();
+    var hermanas = Model.Genealogias.Where(g => g.Relacion == "Hermana").ToList();
+    var sobrinos = Model.Genealogias.Where(g => g.Relacion == "Sobrino" || g.Relacion == "Sobrina").ToList();
+
+}
+  
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/genealogia.css" />
+</head>
+<body>
+
+<div class="container">
+    <h2>Mi Árbol Genealógico</h2>
+
+    <div class="row">
+        <h3>Abuelas</h3>
+        @foreach (var genealogia in abuelas)
+        {
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@genealogia.Nombre</h5>
+                        <img src="@genealogia.Imagen" alt="@genealogia.Nombre" width="130" height="130" />
+                        <p class="card-text">Fecha de Nacimiento: @genealogia.FechaNacimiento.Value.ToString("dd/MM/yyyy")</p>
+                        <p class="card-text">Parentesco: @genealogia.Relacion</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="row">
+        <h3>Padres</h3>
+        @foreach (var genealogia in padres)
+        {
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@genealogia.Nombre</h5>
+                        <img src="@genealogia.Imagen" alt="@genealogia.Nombre" width="130" height="130" />
+                        <p class="card-text">Fecha de Nacimiento: @genealogia.FechaNacimiento.Value.ToString("dd/MM/yyyy")</p>
+                        <p class="card-text">Parentesco: @genealogia.Relacion</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+  
+    <div class="row">
+        <h3>Hermanas</h3>
+        @foreach (var genealogia in hermanas)
+        {
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@genealogia.Nombre</h5>
+                        <img src="@genealogia.Imagen" alt="@genealogia.Nombre" width="130" height="130" />
+                        <p class="card-text">Fecha de Nacimiento: @genealogia.FechaNacimiento.Value.ToString("dd/MM/yyyy")</p>
+                        <p class="card-text">Parentesco: @genealogia.Relacion</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+  
+    <div class="row">
+        <h3>Sobrinos</h3>
+        @foreach (var genealogia in sobrinos)
+        {
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@genealogia.Nombre</h5>
+                        <img src="@genealogia.Imagen" alt="@genealogia.Nombre" width="130" height="130" />
+                        <p class="card-text">Fecha de Nacimiento: @genealogia.FechaNacimiento.Value.ToString("dd/MM/yyyy")</p>
+                        <p class="card-text">Parentesco: @genealogia.Relacion</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+</body>
+</html>

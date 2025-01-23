@@ -1,0 +1,39 @@
+﻿
+@page
+@model YoutuberModel
+@{
+    ViewData["Title"] = "Youtubers";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/Youtubers.css" />
+</head>
+<body>
+
+
+    <div class="container">
+        <h1><b>Mis Youtubers favoritos</b></h1>
+        <div class="row">
+            @foreach (var youtuber in Model.YouTubers)
+            {
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>@youtuber.Nombre</b></h5>
+                            <div class="Link">
+                                <p>Este es el enlace al canal:</p>
+                                <a href="@youtuber.Enlace" target="_blank">@youtuber.Enlace</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+</body>
+</html>

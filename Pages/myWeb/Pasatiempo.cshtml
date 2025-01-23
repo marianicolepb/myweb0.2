@@ -1,0 +1,44 @@
+﻿@page
+@model PasatiempoModel
+@{
+    ViewData["Title"] = "Mis Pasatiempos";
+}
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/Pasatiempo.css" />
+</head>
+<body>
+
+
+<div class="container">
+    <h2>Mis Pasatiempos</h2>
+
+    <div class="row">
+        @foreach (var pasatiempo in Model.Pasatiempos)
+        {
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                   
+                    <div class="card-body">
+                        <h5 class="card-title">@pasatiempo.Nombre</h5>
+                        <p class="card-text">@pasatiempo.Descripcion</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="imagenes">
+        <img src="~/Images/cocinar.jpg" alt="Imagen 1" width="200">
+        <img src="~/Images/gym.jpg" alt="Imagen 2" width="200">
+        <img src="~/Images/Peliculas.jpg" alt="Imagen 3" width="200">
+    </div>
+</div>
+
+</body>
+</html>

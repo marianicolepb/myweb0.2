@@ -1,0 +1,49 @@
+﻿@page
+@model SobreUstedModel
+@{
+    ViewData["Title"] = "Sobre Usted";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/sobreusted.css" />
+</head>
+<body>
+   
+    <div class="container">
+
+        <h1>Conozce más sobre mi historia y mis pasiones.</h1>
+
+
+        <section class="profile">
+            <div style="text-align: center;">
+                <img src="@Model.Usuario.Imagen" alt="@Model.Usuario.Nombre" width="250" height="300" />
+            </div>
+            <h2><b>@Model.Usuario.Nombre @Model.Usuario.Apellido</b></h2>
+            <p><b>Fecha de Nacimiento: @Model.Usuario.FechaNacimiento.ToShortDateString()</b></p>
+        </section>
+
+        <section class="bio">
+            <h3>Biografía</h3>
+            <p style="text-align: justify;">
+                Maria Nicole, nacida el 4 de febrero de 2003 en San Pedro de Macorís, es una joven apasionada y dinámica que actualmente reside en su ciudad natal. Estudiante de Ingeniería en Software, combina su vida académica con su faceta emprendedora, gestionando con éxito un pequeño negocio propio.
+            </p>
+
+            <p style="text-align: justify;">
+                Su naturaleza autodidacta y su capacidad de aprendizaje rápido la convierten en una persona destacada, cualidades que la impulsan hacia sus metas: graduarse, conseguir un buen empleo y viajar extensamente para explorar el mundo. Su mayor sueño es lograr una estabilidad plena, tanto mental como financiera, mientras recorre diferentes culturas y paisajes.
+            </p>
+        </section>
+
+        <footer>
+            <p>¡Gracias por visitar mi página!</p>
+        </footer>
+    </div>
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,51 @@
+﻿@page
+@model myweb0._2.Pages.AnimeoSerieModel
+
+@{
+    ViewData["Title"] = "Animes y Series";
+}
+
+
+<link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
+<script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/Animeoserie.css" />
+</head>
+<body>
+
+<div class="container">
+        <h2><b>Mis Animes y Series Favoritos</b></h2>
+
+    <div class="row">
+            @foreach (var animeOSerie in Model.AnimeOSeries)
+            {
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">@animeOSerie.Titulo</h5>
+
+                      
+                            <div class="video-container">
+
+                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/@animeOSerie.Enlace" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            
+                            </div>
+
+                            <p class="card-text">@animeOSerie.Tipo</p>
+                        </div>
+                    </div>
+                </div>
+            }
+
+    </div>
+</div>
+
+
+
+</body>
+</html>
